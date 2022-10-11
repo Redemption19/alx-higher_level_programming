@@ -1,53 +1,22 @@
 #!/usr/bin/python3
-"""My square module"""
+"""writing a docstring"""
+import math
 
 
-class Square:
-    """defines a square"""
+class MagicClass:
+    """set up the magic"""
 
-    def __init__(self, size=0):
-        """Create a Square
-        Args: size: length of a side of Square
-        """
-        self.__size = size
-
-    @property
-    def size(self):
-        """"The propery of size as the len of a side of Square
-        Raises:
-            TypeError: if size != int
-            ValueErrorr: if size < 0
-        """
-        return self.__size
-
-    @size.setter
-    def size(self, value):
-        if not isinstance(value, int):
-            raise TypeError('size must be an integer')
-        if value < 0:
-            raise ValueError('size must be >= 0')
-        self.__size = value
+    def __init__(self, radius=0):
+        """ writing another docstring """
+        self.__radius = 0
+        if type(radius) is not int and type(radius) is not float:
+            raise TypeError('radius must be a number')
+        self.__radius = radius
 
     def area(self):
-        """Get the area of a Square
-        Returns: The size squared
-        """
-        return self.__size * self.__size
+        """again with the docstring"""
+        return self.__radius ** 2 * math.pi
 
-    def __le__(self, other):
-        return self.area() <= other.area()
-
-    def __lt__(self, other):
-        return self.area() < other.area()
-
-    def __ge__(self, other):
-        return self.area() >= other.area()
-
-    def __ne__(self, other):
-        return self.area() != other.area()
-
-    def __gt__(self, other):
-        return self.area() > other.area()
-
-    def __eq__(self, other):
-        return self.area() == other.area()
+    def circumference(self):
+        """such docstring"""
+        return 2 * math.pi * self.__radius
